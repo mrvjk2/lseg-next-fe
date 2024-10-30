@@ -28,6 +28,7 @@ You can, by clicking, select one of the available options that the chatbot provi
 ## Other considerations
 
 I have updated the stock selection message by adding the current Stock Exchange name for better UX.
+Also, for better UX, I have added the option to go to the main menu at any time, available in the chat's footer.
 
 As time was limited during this challenge, I would for this app add the following details if more time was given:
 1. Design completion (chatbot icons, rounded borders, etc.)
