@@ -38,4 +38,5 @@ As time was limited during this challenge, I would for this app add the followin
 And also a few implementation details:
 1. Rewrite the data JS object such that the keys of the Stock Exchanges and stocks are represented by the codes, not the names;
 2. Use fontawesome for icons such as the chatbot icon and the *send message* button;
-3. Cleanup remaining files created by the project initialization itself (such as unused svgs and stylings).
+3. Cleanup remaining files created by the project initialization itself (such as unused svgs and stylings);
+4. Update the project folder structure so that future pages can be added more easily (i.e. the pages folder).
