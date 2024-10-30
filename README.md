@@ -1,8 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+```bash
+npm ci
+# or
+yarn
+# or
+pnpm ci
+```
+
+Now, run the development server:
 
 ```bash
 npm run dev
@@ -10,27 +17,25 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Using the application
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+You can, by clicking, select one of the available options that the chatbot provides in its last message. You will be able to view the prices of the available stocks given as data. You can also go back to the main menu any time you want, just press on the **Main Menu** button at the bottom of the chat.
 
-## Learn More
+## Other considerations
 
-To learn more about Next.js, take a look at the following resources:
+I have updated the stock selection message by adding the current Stock Exchange name for better UX.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+As time was limited during this challenge, I would for this app add the following details if more time was given:
+1. Design completion (chatbot icons, rounded borders, etc.)
+2. Responsiveness;
+3. Handling of page 404.
+4. If the data were to be sent from the backend, I would rate limit the amount of requests.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+And also a few implementation details:
+1. Rewrite the data JS object such that the keys of the Stock Exchanges and stocks are represented by the codes, not the names;
+2. Use fontawesome for icons such as the chatbot icon and the *send message* button;
+3. Cleanup remaining files created by the project initialization itself (such as unused svgs and stylings).
