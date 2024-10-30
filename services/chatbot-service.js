@@ -131,13 +131,13 @@ export const botStateConfig = {
   },
 };
 
+const INITIAL_STATE = botStateConfig[STATE_STOCK_EXCHANGE_SELECTION]();
+
 export const botStateMachine = {
   state: STATE_STOCK_EXCHANGE_SELECTION, // initial state
   stockExchange: null,
 
   transition(input) {
-    const INITIAL_STATE = botStateConfig[STATE_STOCK_EXCHANGE_SELECTION]();
-
     switch (this.state) {
       case STATE_STOCK_EXCHANGE_SELECTION:
         try {
@@ -166,17 +166,17 @@ export const botStateMachine = {
           return botStateConfig[STATE_STOCK_SELECTION](this.stockExchange);
         }
 
-        this.reset();
-        return INITIAL_STATE;
+        return this.reset();
 
       default:
-        this.reset();
-        return INITIAL_STATE;
+        return this.reset();
     }
   },
 
   reset() {
     this.state = STATE_STOCK_EXCHANGE_SELECTION;
     this.stockExchange = null;
+
+    return INITIAL_STATE;
   },
 };
