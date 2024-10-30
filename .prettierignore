@@ -1,0 +1,10 @@
+# Ignore artifacts:
+build
+coverage
+.next
+
+# Nuxt.js build / generate output
+.github
+.husky
+.next
+out/
