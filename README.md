@@ -40,3 +40,5 @@ And also a few implementation details:
 2. Use fontawesome for icons such as the chatbot icon and the *send message* button;
 3. Cleanup remaining files created by the project initialization itself (such as unused svgs and stylings);
 4. Update the project folder structure so that future pages can be added more easily (i.e. the pages folder).
+5. Move all the texts visible in the UI into their separate files.
+6. Move the useCallback calls and also the initial useState state into their separate files (maybe restructure the chatbot-service.js file and add them there).
