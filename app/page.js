@@ -33,7 +33,11 @@ export default function Home() {
     }
 
     const nextState = botStateMachine.reset();
-    setChatEntries((prevChatEntries) => [...prevChatEntries, { ...nextState, isBot: true }]);
+    setChatEntries((prevChatEntries) => [
+      ...prevChatEntries,
+      { message: 'Main Menu', isBot: false },
+      { ...nextState, isBot: true },
+    ]);
   }, []);
 
   useEffect(() => {
