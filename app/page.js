@@ -43,28 +43,33 @@ export default function Home() {
   }, [chatEntries]);
 
   return (
-    <div className="w-4/5 h-4/5 flex flex-col">
-      <div
-        ref={chatContainerRef}
-        className="flex-1 bg-blue-300 overflow-y-scroll flex flex-col gap-4 p-4"
-      >
-        {chatEntries.map(({ message, options = [], isBot }, index, array) => (
-          <div
-            key={index}
-            className={`flex flex-col items-start gap-2 p-4 bg-white ${!isBot ? 'ml-auto' : ''}`}
-          >
-            <span className={`${options?.length ? 'mb-4' : ''}`}>{message}</span>
-            {options?.map((option, optionIndex) => (
-              <button
-                disabled={index !== array.length - 1}
-                key={optionIndex}
-                onClick={() => handleOptionClick(option)}
-              >
-                {option}
-              </button>
-            ))}
-          </div>
-        ))}
+    <div className="w-4/5 h-5/6 flex flex-col border">
+      <div className="bg-blue-700 p-4 py-5 text-white">
+        <span>LSEG Chatbot</span>
+      </div>
+      <div ref={chatContainerRef} className="flex-1 overflow-y-scroll flex flex-col gap-4 p-4">
+        {chatEntries.map(({ message, options = [], isBot }, index, array) => {
+          const canInteract = index === array.length - 1;
+
+          return (
+            <div
+              key={index}
+              className={`flex flex-col items-start divide-y p-1 ${isBot ? 'bg-blue-200 w-2/3' : 'bg-gray-200 ml-auto'}`}
+            >
+              <span className="p-1">{message}</span>
+              {options?.map((option, optionIndex) => (
+                <button
+                  className={`bg-white p-1 w-full text-left ${canInteract ? 'hover:bg-blue-100 cursor-pointer' : ''}`}
+                  disabled={!canInteract}
+                  key={optionIndex}
+                  onClick={() => handleOptionClick(option)}
+                >
+                  {option}
+                </button>
+              ))}
+            </div>
+          );
+        })}
       </div>
       <div className="bg-gray-200 p-4">
         <span>

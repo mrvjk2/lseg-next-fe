@@ -110,7 +110,7 @@ export const botStateConfig = {
     }
 
     return {
-      message: 'Please select a stock.',
+      message: `Please select a stock available at ${stockExchange.stockExchange}.`,
       options: Object.values(stockExchange.topStocks).map(({ stockName }) => stockName),
     };
   },
